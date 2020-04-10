@@ -1,0 +1,53 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+    "prefer-promise-reject-errors": ["off"],
+    // "react/jsx-filename-extension": ["off"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": ["warn"],
+    "no-return-assign": ["off"],
+    "no-use-before-define": "off",
+    "no-console": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+        "message": "Unexpected property on console object was called"
+      }
+    ],
+    "no-param-reassign": [2, {"props": false}],
+    "prettier/prettier": [
+      "error",
+      {
+        // "endOfLine": "auto"
+        // "printWidth": 80,
+        // "trailingComma": "all",
+        // "tabWidth": 2,
+        // "semi": true,
+        // "singleQuote": false
+        "no-console": "off"
+      },
+      {
+        "fileInfoOptions": {
+          // "usePrettierrc": false,
+          "withNodeModules": true
+        }
+      }
+    ]
+  }
+}
